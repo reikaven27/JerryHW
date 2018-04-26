@@ -1,0 +1,19 @@
+<h1>My Bio</h1>
+{% for u in users %}
+<table class="table">
+	<tr>
+		<th>Name</th>
+			<td>{{ u.name}}</td>
+	</tr>
+
+	<tr>
+		<th>Birthday</th>
+			<td>{{ u.birthday}}</td>
+	</tr>
+
+	<tr>
+		<th>Gender</th>
+			<td>{% if u.is_boy %}男生{% else %}女生{% endif %}</td>
+	</tr>
+
+	{% endfor %}
