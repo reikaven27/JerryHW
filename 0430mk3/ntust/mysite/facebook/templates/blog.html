@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blog</title>
+</head>
+<body>
+	<h1><font color="blue">My Blog</font></h1>
+	<h3><font color="brown">Author:J</font></h3>
+	<div align="right"><a href="/blog/new"><button><h2>New Post</h2></button></a></div><hr>
+	{% for post in post_list %}
+		<div align="right">
+			<a href="/blog/edit?q={{ post.pk }}"><button>edit</button></a>
+			<form action="" method="post">
+				{% csrf_token %}
+				<input type="hidden" name="pk" value="{{ post.pk }}">
+				<input type="submit" value="delete">
+			</form>
+		</div>
+		<h3>Title:</h3>{{ post.title }}
+		<h4>Content:</h4>{{ post.content }}<hr>
+	{% endfor %}
+</body>
+</html>
