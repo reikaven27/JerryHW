@@ -1,0 +1,112 @@
+<!DOCTYPE>
+<html>
+
+<head>
+	<script type="text/javascript">
+		alert("NIHAO");
+		var num1 = 0;
+		var num2 = 0;
+		var col = "";
+
+		function addWord(num){
+				document.getElementById("bar").value += num;
+				
+		}
+
+		function add(){
+			num1 = parseInt(document.getElementById("bar").value);
+			col = "+";
+			document.getElementById("bar").value = ""
+		}
+
+		function min(){
+			num1 = parseInt(document.getElementById("bar").value);
+			col = "-";
+			document.getElementById("bar").value = ""
+		}
+
+		function mul(){
+			num1 = parseInt(document.getElementById("bar").value);
+			col = "*";
+			document.getElementById("bar").value = ""
+		}
+
+		function div(){
+			num1 = parseInt(document.getElementById("bar").value);
+			col = "/";
+			document.getElementById("bar").value = ""
+		}
+
+		function equ(){
+			num2 = parseInt(document.getElementById("bar").value);
+
+			if(col =="+"){
+				 document.getElementById("bar").value = num1 + num2;
+			}
+			if(col =="-"){
+				 document.getElementById("bar").value = num1 - num2;
+			}
+			if(col =="*"){
+				 document.getElementById("bar").value = num1 * num2;
+			}
+			if(col =="/"){
+				 document.getElementById("bar").value = num1 / num2;
+			}
+
+		}
+
+		function c(){
+			num1 = 0;
+			num2 = 0;
+			col ="";
+			 document.getElementById("bar").value  = "";
+
+
+		}
+ function grade(){ 
+        Score=document.getElementById("score").value;
+        if (Score>=60) {
+             a="Congratulations, you've passed!";
+        }
+        else if (Score<60){
+            a="It's okay,you need to improve more!";
+        }
+        document.getElementById("demo").innerHTML=a;
+     }
+	</script>
+</head>
+
+<body>
+
+<H1 style="font-size:300%;">Calculatoooor</H1>
+		<input id="bar" style="width:100%;"><br>
+		<button id="bt_1" onclick="addWord(1);">1</button>
+		<button id="bt_2" onclick="addWord(2);">2</button>
+		<button id="bt_3" onclick="addWord(3);">3</button>
+		<button id="bt_4" onclick="addWord(4);">4</button>
+		<button id="bt_5" onclick="addWord(5);">5</button>
+		<button id="bt_6" onclick="addWord(6);">6</button>
+		<button id="bt_7" onclick="addWord(7);">7</button>
+		<button id="bt_8" onclick="addWord(8);">8</button>
+		<button id="bt_9" onclick="addWord(9);">9</button>
+		<button id="bt_0" onclick="addWord(0);">0</button><br>
+
+		<button id="bt_plus" onclick="add();" >+</button>
+		<button id="bt_min" onclick="min();">-</button>
+		<button id="bt_mo" onclick="mul();">*</button>
+		<button id="bt_de" onclick="div();" >/</button>
+		<button id="bt_eq" onclick="equ();">=</button>
+		<button id="bt_c" onclick="c();">c</button>
+
+</body>
+
+<body>
+
+<H1 style="font-size:300%;">Grading system</H1>
+<p> Input your grade </p>
+
+<td >    <input id="score" type="num"  >       </td>
+<td >    <input id="send" type="button" value="Enter" onClick="grade()">  </td>
+<p id="demo"></p>
+
+</body>
